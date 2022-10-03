@@ -1,0 +1,11 @@
+{
+  "name": "codebase-layer",
+  "version": "1.0.0",
+  "description": "layer with code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Heorhi Puhachou",
+  "license": "ISC"
+}

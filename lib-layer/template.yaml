@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sample SAM Library Layer Template
+
+
+Resources:
+  AwsServices:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: lib-layer
+      Description: Layer for libraries
+      ContentUri: ./lib
+      CompatibleRuntimes:
+        - nodejs16.x
+      LicenseInfo: MIT
+      RetentionPolicy: Retain

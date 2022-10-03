@@ -1,0 +1,4 @@
+/.idea/
+/start-point/.aws-sam/
+/lib-layer/.aws-sam/
+/codebase-layer/.aws-sam/

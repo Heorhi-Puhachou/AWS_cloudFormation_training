@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "start-point-stack"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-7joab04w50f3"
+s3_prefix = "start-point-stack"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = []

@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  codebase-layer
+
+  Sample SAM Layer Template
+
+
+Resources:
+  AwsServices:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: codebase-layer
+      Description: Layer with overall code
+      ContentUri: ./code
+      CompatibleRuntimes:
+        - nodejs16.x
+      LicenseInfo: MIT
+      RetentionPolicy: Retain

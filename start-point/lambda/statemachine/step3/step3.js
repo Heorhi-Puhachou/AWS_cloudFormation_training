@@ -15,8 +15,10 @@ exports.handler = (event, context, callback) => {
     }
 
     checkFolder('gateway');
+    checkFolder('./gateway');
     checkFolder('statemachine');
     checkFolder('GatewayFunction');
+    checkFolder('./GatewayFunction');
     checkFolder('Step1Function');
     checkFolder('Step3Function');
     checkFolder('./opt');

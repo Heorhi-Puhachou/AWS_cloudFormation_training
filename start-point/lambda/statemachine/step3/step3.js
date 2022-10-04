@@ -3,30 +3,19 @@
 exports.handler = (event, context, callback) => {
 
     console.log("Step 3 start");
-    const fs = require('fs')
 
-    // directory to check if exists
-    const dir = './opt'
-
-    if (fs.existsSync(dir)) {
-        console.log('Directory exists!')
-    } else {
-        console.log('Directory not found.')
-    }
-
-    checkFolder('gateway');
-    checkFolder('./gateway');
-    checkFolder('statemachine');
-    checkFolder('GatewayFunction');
-    checkFolder('./GatewayFunction');
-    checkFolder('Step1Function');
-    checkFolder('Step3Function');
-    checkFolder('./opt');
-    checkFolder('./opt/code/test');
-    checkFolder('opt');
-    checkFolder('code');
-    checkFolder('nodejs');
+    checkFilesInFolder('./');
     checkFolder('test');
+    checkFolder('/test');
+    checkFolder('./test');
+
+    checkFilesInFolder('../');
+    checkFolder('opt');
+    checkFolder('../opt');
+
+    checkFilesInFolder('../opt');
+
+    checkFilesInFolder('../../');
 
     //run(event, context, callback);
     console.log("Step 3 end");
@@ -44,4 +33,11 @@ let checkFolder = (name) => {
     } else {
         console.log(name + ' directory not found.')
     }
+}
+
+// check files in directory
+let checkFilesInFolder = (folderPath) => {
+    const fs = require('fs')
+    var files = fs.readdirSync(folderPath);
+    console.log('Files in ' + folderPath + ': ' + files);
 }

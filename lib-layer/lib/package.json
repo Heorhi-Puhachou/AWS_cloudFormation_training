@@ -1,5 +1,5 @@
 {
-  "name": "samarou-lib-layer",
+  "name": "lib-layer",
   "version": "1.0.0",
   "description": "test layer for libs",
   "main": "index.js",

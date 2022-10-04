@@ -1,4 +1,5 @@
-//const run = require('./opt/code/test');
+const test = require('/opt/util/test.js');
+const db = require('/opt/util/db.js');
 
 exports.handler = (event, context, callback) => {
 
@@ -17,7 +18,8 @@ exports.handler = (event, context, callback) => {
 
     checkFilesInFolder('../../');
 
-    //run(event, context, callback);
+    test.run(event, context, callback);
+    db.put(event, context, callback);
     console.log("Step 3 end");
 
     event.from = "Step 3";

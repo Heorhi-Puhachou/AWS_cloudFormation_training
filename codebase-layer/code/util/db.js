@@ -6,7 +6,7 @@ const dynamodb = new AWS.DynamoDB({
 
 exports.put = (event, context, callback) => {
 
-    console.log("Put data to DB 2");
+    console.log("Put data to DB");
     console.log(event);
 
     let createdDatetime = new Date();
@@ -49,7 +49,7 @@ exports.put = (event, context, callback) => {
                 S: eventMessage
             }
         },
-        TableName: "samarou-test"
+        TableName: "test-table"
     };
 
     console.log(params);

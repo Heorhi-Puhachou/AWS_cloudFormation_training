@@ -7,7 +7,7 @@ Description: >
 
 
 Resources:
-  AwsServices:
+  CodebaseLayer:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: codebase-layer
@@ -17,3 +17,10 @@ Resources:
         - nodejs16.x
       LicenseInfo: MIT
       RetentionPolicy: Retain
+
+Outputs:
+  CodebaseLayer:
+    Description: Codebase layer
+    Value: !Ref CodebaseLayer
+    Export:
+      Name: !Sub "${AWS::StackName}"

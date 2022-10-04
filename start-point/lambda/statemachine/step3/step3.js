@@ -14,6 +14,11 @@ exports.handler = (event, context, callback) => {
         console.log('Directory not found.')
     }
 
+    checkFolder('gateway');
+    checkFolder('statemachine');
+    checkFolder('GatewayFunction');
+    checkFolder('Step1Function');
+    checkFolder('Step3Function');
     checkFolder('./opt');
     checkFolder('./opt/code/test');
     checkFolder('opt');

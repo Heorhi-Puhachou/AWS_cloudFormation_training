@@ -135,6 +135,11 @@ Resources:
       Tracing: Active
       Layers:
         - arn:aws:lambda:us-east-1:899012776854:layer:codebase-layer:10
+      # Instead of this layer description can be used !ImportValue for layer but in this case
+      # staks cannot be updated independently (fails because of strong relation)
+      #
+      #Layers:
+      #  - !ImportValue codebase-layer
 
   StatesExecutionRole:
     Type: "AWS::IAM::Role"

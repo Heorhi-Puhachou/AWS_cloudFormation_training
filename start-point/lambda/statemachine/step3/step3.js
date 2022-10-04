@@ -26,6 +26,7 @@ exports.handler = (event, context, callback) => {
     checkFolder('opt');
     checkFolder('code');
     checkFolder('nodejs');
+    checkFolder('test');
 
     //run(event, context, callback);
     console.log("Step 3 end");

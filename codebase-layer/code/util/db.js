@@ -50,6 +50,9 @@ exports.put = (event, context, callback) => {
             },
             "EventMessage": {
                 S: eventMessage
+            },
+            "From": {
+                S: from
             }
         },
         TableName: "test-table"

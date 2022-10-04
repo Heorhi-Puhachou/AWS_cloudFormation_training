@@ -18,7 +18,7 @@ exports.handler = (event, context, callback) => {
 
     checkFilesInFolder('../../');
 
-    test.run(event, context, callback);
+    test.run();
     db.put(event, context, callback);
     console.log("Step 3 end");
 

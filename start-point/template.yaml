@@ -115,7 +115,8 @@ Resources:
         - x86_64
       Tracing: Active
       Layers:
-        - arn:aws:lambda:us-east-1:899012776854:layer:codebase-layer:10
+        # if the bucket was updated and we need the last version the last number must be updated too.
+        - arn:aws:lambda:us-east-1:899012776854:layer:codebase-layer:11
       # Instead of this layer description can be used !ImportValue for layer but in this case
       # staks cannot be updated independently (fails because of strong relation)
       #

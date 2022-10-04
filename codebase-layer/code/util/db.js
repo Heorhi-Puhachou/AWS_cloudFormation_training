@@ -1,8 +1,11 @@
 const AWS = require('aws-sdk');
-const dynamodb = new AWS.DynamoDB({
-    region: 'us-east-1',
-    apiVersion: '2012-08-10'
-});
+// We set region if DB in the non-same region as the stack
+//const dynamodb = new AWS.DynamoDB({
+//    region: 'us-east-1',
+//    apiVersion: '2012-08-10'
+//});
+
+const dynamodb = new AWS.DynamoDB();
 
 exports.put = (event, context, callback) => {
 

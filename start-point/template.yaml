@@ -5,7 +5,7 @@ Description: >
   Sample SAM Template to study CloudFormation
 
 Resources:
-  GatewayFunctionRole:
+  StartStateMachineRole:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -25,17 +25,10 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                  - logs:CreateLogGroup
-                  - logs:CreateLogStream
-                  - logs:PutLogEvents
-                Resource: "*"
-              # State machine
-              - Effect: Allow
-                Action:
                   - states:StartExecution
                 Resource: arn:aws:states:*:*:*
 
-  DynamoFunctionRole:
+  DynamoPutRole:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -68,7 +61,7 @@ Resources:
   GatewayFunction:
     Type: AWS::Serverless::Function
     Properties:
-      Role: !GetAtt [ GatewayFunctionRole, Arn ]
+      Role: !GetAtt [ StartStateMachineRole, Arn ]
       CodeUri: lambda/gateway/
       Handler: index.handler
       Runtime: nodejs16.x
@@ -87,7 +80,6 @@ Resources:
   Step1Function:
     Type: AWS::Serverless::Function
     Properties:
-      Role: !GetAtt [ GatewayFunctionRole, Arn ]
       CodeUri: lambda/statemachine/step1
       Handler: step1.handler
       Runtime: nodejs16.x
@@ -97,7 +89,6 @@ Resources:
   Step21Function:
     Type: AWS::Serverless::Function
     Properties:
-      Role: !GetAtt [ GatewayFunctionRole, Arn ]
       CodeUri: lambda/statemachine/step2-1
       Handler: step2-1.handler
       Runtime: nodejs16.x
@@ -107,7 +98,6 @@ Resources:
   Step22Function:
     Type: AWS::Serverless::Function
     Properties:
-      Role: !GetAtt [ GatewayFunctionRole, Arn ]
       CodeUri: lambda/statemachine/step2-2
       Handler: step2-2.handler
       Runtime: nodejs16.x
@@ -117,7 +107,7 @@ Resources:
   Step3Function:
     Type: AWS::Serverless::Function
     Properties:
-      Role: !GetAtt [ DynamoFunctionRole, Arn ]
+      Role: !GetAtt [ DynamoPutRole, Arn ]
       CodeUri: lambda/statemachine/step3
       Handler: step3.handler
       Runtime: nodejs16.x

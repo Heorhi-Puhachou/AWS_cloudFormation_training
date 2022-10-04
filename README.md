@@ -1,6 +1,6 @@
 # AWS_cloudFormation_training
 
-This project contains folders that present stacks for AWS.
+## This project contains folders that present stacks for AWS.
 
 start-point - a base stack that contains a description of the endpoint that calls GatewayFunction. GatewayFunction starts StateMachine which contains 4 functions with the choice statement. The last function starts writing data to DB. Code for putting data to DB placed in codebase-layer.
 
